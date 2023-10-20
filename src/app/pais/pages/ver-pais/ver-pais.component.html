@@ -1,4 +1,4 @@
-<div *ngIf="!pais; else divPais"  class="alert alert-info">
+<div *ngIf="!pais; else divPais" class="alert alert-info">
     Espere por favor...
 </div>
 
@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <div class="row"> 
+    <div class="row">
         <div class="col-4">
             <h3>Bandera</h3>
             <img [src]="pais.flags.png" class="img-thumbnail" />
@@ -36,8 +36,8 @@
     <div class="row">
         <div class="col">
             <h3>Paises limitrofes</h3>
-            <span *ngFor="let t of pais.borders"  class="badge bg-primary mr-5" >          
-                        {{ t}}   
+            <span *ngFor="let t of pais.borders" class="badge bg-primary mr-5">
+                {{ t}}
             </span>
         </div>
     </div>
@@ -45,14 +45,22 @@
     <div class="row">
         <div class="col">
             <h3>Traducciones</h3>
-            <span *ngFor="let t of pais.translations | keyvalue"  class="badge bg-primary mr-5" >          
-                        {{ t.value.official }}   
+            <span *ngFor="let t of pais.translations | keyvalue" class="badge bg-primary mr-5">
+                {{ t.value.official }}
             </span>
         </div>
     </div>
-    <pre class="me-5">
+    <!--<pre class="me-5">
         {{pais | json}}  
-        <!-- para que lo muestre en formato json, sino solo pone object -->
-    </pre>
+         para que lo muestre en formato json, sino solo pone object
+    </pre>-->
+    <!-- <link rel="import" href="https://www.elcorreo.com/">
+    <embed src="https://www.elcorreo.com/" width=200 height=200 />
+    <iframe src="https://www.elcorreo.com/" &embedded="true"></iframe>
+    <object data="https://www.elcorreo.com/"
+    width="400"
+    height="300"
+    type="text/html">
+        Alternative Content
+    </object> -->
 </ng-template>
-
