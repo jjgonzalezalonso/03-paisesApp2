@@ -1,8 +1,13 @@
 <h3>Buscar por subregion en Europa <small> {{subregionActiva | titlecase}}</small></h3>
 <hr>
-<h5>Seleccione la subregion</h5>
+<h5>Seleccione la region</h5>
 <div class="row">
     <div class="col">
+        <button *ngFor="let region of regiones" class="btn btn-outline-primary"
+            [class]="(region==regionActiva) ? 'active' : 'btn btn-outline-primary'" (click)="activarRegion(region)">
+            {{region | titlecase}}
+        </button>
+        <hr>
         <button *ngFor="let subregion of subregiones" class="btn btn-outline-primary"
             [class]="(subregion==subregionActiva) ? 'active' : 'btn btn-outline-primary'"
             (click)="activarSubregion(subregion)">
@@ -11,9 +16,11 @@
     </div>
 </div>
 
+
 <div *ngIf="hayError" class="alert alert-danger">
     No se encontró nada con el término {{termino}}
 </div>
+
 
 <div *ngIf="paises.length>0" class="row">
     <div class="col">
@@ -21,3 +28,4 @@
         <!-- Enviamos paises a pais-tabla.component.ts. al @Input -->
     </div>
 </div>
+
